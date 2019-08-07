@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cage Collector</title>
+    <link rel='stylesheet' href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="textcss" href="./assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Cage Collector!!</h1>
+        <hr class="my-4">
+        <p class="lead">You will be given a random number at the begging of the game.</p>
+        <p>There are four Nick Cages bellow, by clicking on a cage you will add a specific ammount of points to to your
+            total score.</p>
+        <p>You win the game by making your total score mach the random number, think of black jack, except you have to
+            hit exactly 21 (in this case, what ever random number is generated).</p>
+        <p>The value of each cage is hidden from you unill you click on it.</p>
+        <p>Each time when the game starts it will change the value of the cages.</p>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Match this Number:</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="randomNumber"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header" id="status"></div>
+            <div class="card-body">
+                <h5 id="wins" id="wins">Wins:</h5>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title" id="losses">Losses:</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img src="https://www.placecage.com/200/200" id="cage">
+            </div>
+            <div class="col-md-2">
+                <img src=" https://www.placecage.com/c/200/200" id="cage">
+            </div>
+            <div class="col-md-2">
+                <img src="https://static3.srcdn.com/wordpress/wp-content/uploads/2016/11/Nicolas-Cage.jpg?q=50&fit=crop&w=738&h=369&dpr=1.5"
+                    width="250px" height="200px" id="cage">
+            </div>
+            <div class="col-md-2">
+                <img src="https://www.placecage.com/g/200/200" id="cage">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Your total score is:</div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="score"></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
