@@ -1,71 +1,76 @@
-$("document").ready(function(){
+$("document").ready(function () {
 
     console.log("ready to go!")
 
 
 
-var targetNumber = 0;
-var crystalValue = "";
-var numberOfWins = 0;
-var numberOfLosses = 0;
-var score = 0;
+    var targetNumber = 0;
+    var crystalValue = "";
+    var numberOfWins = 0;
+    var numberOfLosses = 0;
+    var score = 0;
 
-function startGame() {
+    function startGame() {
 
-    score = 0;
+        score = 0;
 
-    $("#score").text(score);
-  
-   targetNumber = Math.floor((Math.random() * 100) + 20 );
-    
-   $("#randomNumber").text(targetNumber);
+        $("#score").text(score);
 
-    for(var i = 0; i < 1; i++){
+        targetNumber = Math.floor((Math.random() * 100) + 20);
 
-        var value = Math.floor((Math.random() * 12) + 1);
+        $("#randomNumber").text(targetNumber);
 
-        crystalValue = value + crystalValue;
+        /*for (var i = 0; i < 1; i++) {
+
+            var value = Math.floor((Math.random() * 12) + 1);
+
+            crystalValue = value;
+        };*/
+
+        $(".cage").each(function(idx, element){
+            console.log(element);
+            $(element).attr("data-crystalvalue", Math.floor((Math.random() * 12) + 1));
+            
+        });
+
+        console.log(crystalValue)
     }
-
-    console.log(crystalValue)
-}
-startGame()
+    startGame()
 
 
+    $(".cage").on("click", function () {
 
-$("#cage").on("click", function(){
-    
-    crystalValue = parseInt(crystalValue);
+        crystalValue = parseInt(crystalValue);
 
-    score += crystalValue
-    
-    $("#score").text(score);
+        score += crystalValue
 
-    if (score === targetNumber) {
+        $("#score").text(score);
 
-        $("#status").text("You Win");
+        if (score === targetNumber) {
 
-        numberOfWins++;
+            $("#status").text("You Win");
 
-        $("#wins").text("wins: " + numberOfWins);
+            numberOfWins++;
 
-        startGame();
+            $("#wins").text("wins: " + numberOfWins);
 
-      }
-  
-      else if (score >= targetNumber) {
-        $("#status").text("You Loose!")
+            startGame();
 
-        numberOfLosses++;
+        }
 
-        $("#losses").text("Losses: " + numberOfLosses);
+        else if (score >= targetNumber) {
+            $("#status").text("You Loose!")
 
-        startGame();
-      }
-      
+            numberOfLosses++;
+
+            $("#losses").text("Losses: " + numberOfLosses);
+
+            startGame();
+        }
 
 
-});
+
+    });
 
 
 
