@@ -20,27 +20,21 @@ $("document").ready(function () {
 
         $("#randomNumber").text(targetNumber);
 
-        /*for (var i = 0; i < 1; i++) {
-
-            var value = Math.floor((Math.random() * 12) + 1);
-
-            crystalValue = value;
-        };*/
-
         $(".cage").each(function(idx, element){
-            console.log(element);
             $(element).attr("data-crystalvalue", Math.floor((Math.random() * 12) + 1));
-            
+            crystalValue = element
+            console.log(crystalValue)
         });
+        
 
-        console.log(crystalValue)
+        console.log(crystalValue);
     }
     startGame()
 
 
     $(".cage").on("click", function () {
 
-        crystalValue = parseInt(crystalValue);
+        crystalValue = parseInt($(this).attr("data-crystalvalue"));
 
         score += crystalValue
 
@@ -48,7 +42,7 @@ $("document").ready(function () {
 
         if (score === targetNumber) {
 
-            $("#status").text("You Win");
+            $("#status").text("You Win!!");
 
             numberOfWins++;
 
@@ -59,7 +53,7 @@ $("document").ready(function () {
         }
 
         else if (score >= targetNumber) {
-            $("#status").text("You Loose!")
+            $("#status").text("You Loose!!")
 
             numberOfLosses++;
 
@@ -71,13 +65,6 @@ $("document").ready(function () {
 
 
     });
-
-
-
-
-
-
-
 
 
 
